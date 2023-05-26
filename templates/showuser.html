@@ -1,0 +1,61 @@
+{% extends 'base.html' %}
+{% block add %}
+<!DOCTYPE html>
+<html>
+<head>
+<style>
+table {
+  border-collapse: collapse;
+  width: 100%;
+}
+
+th, td {
+  text-align: left;
+  padding: 8px;
+}
+
+tr:nth-child(even) {
+  background-color: #D6EEEE;
+}
+</style>
+</head>
+<body>
+
+
+<div>
+    <table>
+        <tr>
+            <th>Email</th>
+            <th>First Name</th>
+            <th>Last Name</th>
+            <th>Mobile</th>
+            
+        </tr>
+        {% for i in user %}
+        <tr>
+            <td>{{i.email}}</td>
+            <td>{{i.first_name}}</td>
+            <td>{{i.last_name}}</td> 
+            <td>{{i.mobile}}</td> 
+            <td>
+              <form action="{% url 'deletedata' i.id %}">
+                {% csrf_token %}
+                <input type="submit" value="Delete">
+              </form>
+              <a href="{% url 'updatedata' i.id%}"><b>Update</a>
+           
+              </tr>
+            </td>
+           
+        {% endfor %}
+        </tr>
+      
+    </table>
+    </div>
+
+
+</body>
+</html>
+
+
+{% endblock %}

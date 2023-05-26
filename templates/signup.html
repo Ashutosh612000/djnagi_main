@@ -1,0 +1,64 @@
+{% extends 'base.html' %}
+{% block add %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <h1>Sign up Here</h1>
+    <div>
+        {% comment %} {% for msg in massages %}
+          {{msg}}
+        {% endfor %}  {% endcomment %}
+
+        {% comment %} {% if massages %}
+        {{massages}}
+        {% endif %} {% endcomment %}
+
+        {% comment %} {% for msg in massages %}
+        <div class = "alert alert-success">
+         {{msg.tags}}
+         {{msg}}
+        </div>
+        {% endfor %} {% endcomment %}
+
+     
+    
+
+<div>
+    <form action="" method="POST">
+        {% csrf_token %}
+        
+            {% comment %} UserName : <input type="text"  id='username'  name='username' required>
+            <br>
+            <br> {% endcomment %}
+            Fname: <input type="text" id='fname' name='fname' placeholder="Enter Your Frist Name" required>
+            <br>
+            <br>
+            Lname : <input type="text" id='lname'   name="lname" placeholder="Enter Your Last Name" required>
+            <br>
+            <br>
+            Mobile: <input type="text" id='mobile'   name="mobile" placeholder="Enter Mobile Number" required>
+            <br>
+            <br>
+            Email: <input type="email" id='email'  name="email" placeholder="Enter Your Email" required>
+            <br>
+            <br>
+            Password : <input type="password" id='pass1'  name='pass1' placeholder="Enter Your Password" required>
+            <br>
+            <br>
+            Re-Password : <input type="password" id='pass2'  name='pass2' placeholder="Re-Enter Your Password" required>
+            <br>
+            <br>
+            <input type="submit" value="submit">
+    </form>
+</din>
+
+</body>
+</html>
+
+{% endblock add %}

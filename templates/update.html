@@ -1,0 +1,49 @@
+{% extends 'base.html' %} 
+{% block add %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <h1>Hello update {{id}}   </h1>
+
+    <body>
+
+        <form id="container" action="" method="POST">
+            <div id="edit">
+            {% csrf_token %}
+            {% if udata %}
+                Name : <input value="{{udata.first_name}}"   name='fname'>
+                <br>
+                <br>
+                Number: <input value="{{udata.mobile}}"  name='mobile'>
+                <br>
+                <br>
+                Email : <input  value="{{udata.email}}"   name="email">
+                <br>
+                <br>
+                DOB : <input  value="{{udata.age}}"   name="age">
+                <br>
+            </div>
+
+                <br>
+                
+                <input type="submit" value="submit">
+  
+            {% endif %}
+         
+        </form>
+       
+        
+    </body>
+
+
+
+</body>
+</html>
+
+{% endblock add %}}
